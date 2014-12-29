@@ -54,7 +54,8 @@ Three methods in controller respond to user behaviour:
 3. Remove drop-down list
 
 
-1. To add a new drop-down list `addSelect()` method has to be triggered, in this example it's a button click. This method adds new item (select box) to an array. Having unique counter helps referring to a specific drop-down list when retrieving / updating values or removing drop-down list from array of elements.
+
+1) To add a new drop-down list `addSelect()` method has to be triggered, in this example it's a button click. This method adds new item (select box) to an array. Having unique counter helps referring to a specific drop-down list when retrieving / updating values or removing drop-down list from array of elements.
 
 ```javascript
   $scope.selectGroup = [];
@@ -66,7 +67,7 @@ Three methods in controller respond to user behaviour:
 ```
 
 
-2. Responding to select behaviour method `setSelected()` obtains or updates selected value from drop-down list. In this example default value is omitted. Single value per drop-down list will be stored in array of selected values, on changed event it's value will be updated accordingly. [Lo-Dash](https://lodash.com/) library utilised to manage selected values in array. 
+2) Responding to select behaviour method `setSelected()` obtains or updates selected value from drop-down list. In this example default value is omitted. Single value per drop-down list will be stored in array of selected values, on changed event it's value will be updated accordingly. [Lo-Dash](https://lodash.com/) library utilised to manage selected values in array. 
 
 ```javascript
   $scope.setSelected = function (index,item) {
@@ -91,7 +92,7 @@ Three methods in controller respond to user behaviour:
 ```
 
 
-3. To remove drop-down list method `removeSelect()` respond to this action. Selected value from given drop-down list being removed from array of values first and then drop-down list being removed it's self.
+3) To remove drop-down list method `removeSelect()` respond to this action. Selected value from given drop-down list being removed from array of values first and then drop-down list being removed it's self.
 
 ```javascript
   $scope.removeSelect = function(box){

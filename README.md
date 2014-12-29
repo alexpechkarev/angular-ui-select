@@ -11,12 +11,17 @@ This directive allows creating multiply drop-down lists with group related optio
 ###Usage
 
 How does it work? Simple. Directive tells compiler to attached specific behaviour and create drop-down element from template. 
-To start, ensure all above dependencies are included as well as ui-select.js directive and selectCrt.js controller attached.
+To start, ensure all above dependencies are included as well as `ui-select.js` directive and `selectCrt.js` controller attached.
 
-Add HTML markup for select element to the file
+Add HTML markup for select element first
 
 ```html
-    <group-select update="setSelected(select.box,item)"  data="selectData" single="selectedItem" close="removeSelect(select.box)"  ng-repeat="select in selectGroup"></group-select>
+    <group-select update="setSelected(select.box,item)"  
+        data="selectData" 
+        single="selectedItem" 
+        close="removeSelect(select.box)"  
+        ng-repeat="select in selectGroup">
+    </group-select>
 ```
 
 Following attributes bind data with controller scope:

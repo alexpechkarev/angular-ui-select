@@ -27,12 +27,15 @@ Add HTML markup for select element first
 Following attributes bind data with controller scope:
 
  `data="selectData"`   - drop-down data 
+
  `single="selectedItem"`  - selected element by default
+
  `update="setSelected(select.box,item)"` - specify selected element by given drop-down list
+
  `close="removeSelect(select.box)` - remove given drop-down list
 
 
-In the `selectCrt.js` set data for select element and initialise selected item by default :
+In the `selectCrt.js` initialising data for select element and setting selected item :
 
 ```javascript
   $scope.selectData = [

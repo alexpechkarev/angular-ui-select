@@ -1,0 +1,40 @@
+{
+    "name": "alexpechkarev/angular-ui-select",
+    "description": "AngularJS UI Select directive allows creating multiply drop-down lists with group related options.",
+    "type": "component",
+    "homepage": "https://github.com/alexpechkarev/angular-ui-select",
+    "license": "MIT",
+    "support": {
+        "issues": "https://github.com/alexpechkarev/angular-ui-select/issues",
+        "wiki": "http://alexpechkarev.github.io/angular-ui-select/",
+        "source": "https://github.com/alexpechkarev/angular-ui-select"
+    },
+	"repositories": [
+		{
+		    "type": "package",
+		    "package": {
+		        "name": "components/lodash",
+		        "type": "component",
+		        "version": "2.4.1",
+		        "dist": {
+		            "url": "https://raw.githubusercontent.com/lodash/lodash/2.4.1/dist/lodash.compat.min.js",
+		            "type": "js"
+		        }
+		    }
+		}
+	    ],
+    "require": {
+        "components/jquery": "1.11.*",
+        "components/angular.js": "1.3.*",
+        "twitter/bootstrap": "*",
+        "components/lodash": "*"
+    },
+    "extra": {
+        "component": {
+            "scripts": [
+                "ui-select.js",
+                "selectCtr.js"
+            ]
+        }
+    }
+}

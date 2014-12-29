@@ -1,16 +1,15 @@
-# AngularJS UI Select
+## AngularJS UI Select
 This directive allows creating multiply drop-down lists with group related options. Value of selected options added to an array that available to AngularJS or can be accessible after when the form being submitted.
 
-## Dependencies
--------------
+### Dependencies
 
 1. [AngularJS](https://angularjs.org/) - v1.3.8
 2. [jQuery](http://jquery.com/) - v1.11.1
 3. [Lo-Dash](https://lodash.com/) - v2.4.1
 4. [Bootstrap](http://getbootstrap.com/) - v3.3.1
 
-##Usage
--------------
+###Usage
+
 How does it work? Simple. Directive tells compiler to attached specific behaviour and create drop-down element from template. 
 To start, ensure all above dependencies are included as well as ui-select.js directive and selectCrt.js controller attached.
 
@@ -101,14 +100,12 @@ Three methods in controller respond to user actions:
 
 
 
-##Support
--------------
+###Support
 
 [Please open an issue on GitHub](https://github.com/alexpechkarev/angular-ui-select/issues)
 
 
-##License
--------------
+###License
 
 The MIT License (MIT)
 

@@ -12,7 +12,7 @@ var uiselect = angular.module('uiselect', ['ui-select'])
 
 .controller('selectController', function($scope){
   
-  // group of related options
+  // Specify drop-down data
   $scope.selectData = [
       {id:'0',  name: 'Select product type', shade:''},
       {id:'123',name:'black',  shade:'dark'},
@@ -95,7 +95,7 @@ var uiselect = angular.module('uiselect', ['ui-select'])
    * 
    * @returns {undefined}
    */
-  $scope.addSel = function() {
+  $scope.addSelect = function() {
     $scope.selectGroup.push({box:$scope.box});
     $scope.box++;
   };

@@ -30,9 +30,10 @@
             
 <!--            Panel body-->
         <div class="panel-body">
-            
-            <pre>Current item: {{currentItem | json}}</pre>
-            <pre>All selected items: {{allItems | json}}</pre>
+            <strong>Current item</strong>
+            <pre> {{currentItem | json}}</pre>
+            <strong>All selected items</strong>
+            <pre>{{allItems | json}}</pre>
             
             
             
@@ -47,7 +48,7 @@
             
         <!--Panel Footer        -->
         <div class="panel-footer">
-            <button class='btn btn-default' ng-click="addSel()">Add New</button>
+            <button class='btn btn-default' ng-click="addSelect()">Add New</button>
          </div><!--/ Footer-->
         
         </div> <!--        / Panel-->
@@ -60,7 +61,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular.min.js"></script>    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.compat.min.js"></script>    
-    <script src="../src/ui-select.js"></script>
+    <script src="ui-select.js"></script>
     <script src="selectCtr.js"></script>
   </body>
 </html>

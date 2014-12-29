@@ -1,5 +1,5 @@
 # AngularJS UI Select
-This directive allows creating multiply drop-down lists with group related options. Value of selected options added to an array that available to AngularJS. Alternatively list of values can be made available when the form is submitted.
+This directive allows creating multiply drop-down lists with group related options. Value of selected options added to an array that available to AngularJS or can be accessible after when the form being submitted.
 
 ## Dependencies
 -------------
@@ -7,14 +7,99 @@ This directive allows creating multiply drop-down lists with group related optio
 1. [AngularJS](https://angularjs.org/) - v1.3.8
 2. [jQuery](http://jquery.com/) - v1.11.1
 3. [Lo-Dash](https://lodash.com/) - v2.4.1
-
-
-## CSS
--------------
-Using [Bootstrap](http://getbootstrap.com/) - v3.3.1 to style an example.
+4. [Bootstrap](http://getbootstrap.com/) - v3.3.1
 
 ##Usage
 -------------
+How does it work? Simple. Directive tells compiler to attached specific behaviour and create drop-down element from template. 
+To start, ensure all above dependencies are included as well as ui-select.js directive and selectCrt.js controller attached.
+
+Add HTML markup for select element to the file
+
+```html
+    <group-select update="setSelected(select.box,item)"  data="selectData" single="selectedItem" close="removeSelect(select.box)"  ng-repeat="select in selectGroup"></group-select>
+```
+
+Following attributes bind data with controller scope:
+
+ `data="selectData"`   - drop-down data 
+ `single="selectedItem"`  - selected element by default
+ `update="setSelected(select.box,item)"` - specify selected element by given drop-down list
+ `close="removeSelect(select.box)` - remove given drop-down list
+
+
+In the `selectCrt.js` set data for select element and initialise selected item by default :
+
+```javascript
+  $scope.selectData = [
+      {id:'0',  name: 'Select product type', shade:''},
+      {id:'123',name:'black',  shade:'dark'},
+      {id:'245',name:'white',  shade:'light'}     
+  ];
+
+ $scope.selectedItem = $scope.selectData[0]; 
+```
+
+Three methods in controller respond to user actions:
+
+1) Add new drop-down list
+2) Get value of selected element
+3) Remove drop-down list
+
+
+1) To add a new drop-down list `addSelect()` method has to be triggered, in this example it's a button click. This method adds new item (select box) to an array. Having unique counter helps referring to a specific drop-down list when retrieving / updating values or removing drop-down list from array of elements.
+
+```javascript
+  $scope.selectGroup = [];
+  $scope.box = 0;
+  $scope.addSelect = function() {
+    $scope.selectGroup.push({box:$scope.box});
+    $scope.box++;
+  };
+```
+
+
+2) Responding to select behaviour method `setSelected()` obtains or updates selected value from drop-down list. In this example default value is omitted. Single value per drop-down list will be stored in array of selected values, on changed event it's value will be updated accordingly. [Lo-Dash](https://lodash.com/) library utilised to manage selected values in array. 
+
+```javascript
+  $scope.setSelected = function (index,item) {
+      
+      if(item.shade !== ""){
+      
+        $scope.currentItem = item;
+      
+        if(!_.find($scope.allItems,{'index':index}) ){
+
+            $scope.allItems.push({index:index,item:item});
+
+        }else{
+
+            _.remove($scope.allItems, function(it) { return it.index === index; });
+            $scope.allItems.push({index:index,item:item});
+        }
+      
+      }
+        
+  };
+```
+
+```javascript
+3) To remove drop-down list method `removeSelect()` respond to this action. Selected value from given drop-down list being removed from array of values first and then drop-down list being removed it's self.
+
+  $scope.removeSelect = function(box){
+      
+       $scope.currentItem = [];
+
+       _.remove($scope.allItems, function(it) { return it.index === box; });
+
+      if(_.find($scope.selectGroup,{'box':box}) ){
+          _.remove($scope.selectGroup, function(it) { return it.box === box; });
+      }
+  };
+```
+
+
+
 
 ##Support
 -------------

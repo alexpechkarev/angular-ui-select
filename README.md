@@ -1,5 +1,5 @@
 ## AngularJS UI Select
-This directive allows creating multiply drop-down lists with group related options. Value of selected options added to an array that available to AngularJS or can be accessible after when the form being submitted.
+This directive allows creating multiply drop-down lists with group related options. Value of selected options added to an array that available to AngularJS.
 
 ![Screenshot](ui-select.png?raw=true "Angular JS UI Select")
 
@@ -18,7 +18,7 @@ This directive allows creating multiply drop-down lists with group related optio
 ###Usage
 
 How does it work? Simple. Directive tells compiler to attached specific behaviour and create drop-down element from template. 
-To start, ensure all above dependencies are included as well as `ui-select.js` directive and `selectCrt.js` controller attached.
+To start, ensure all above dependencies are included as well as `ui-select.js` directive and `selectCrt.js` controller.
 
 Add HTML markup for select element first
 
@@ -42,7 +42,7 @@ Following attributes bind data with controller scope:
  `close="removeSelect(select.box)` - remove given drop-down list
 
 
-In the `selectCrt.js` initialising data for select element and setting selected item :
+In the `selectCrt.js` initialise data for select element and specify selected item :
 
 ```javascript
   $scope.selectData = [

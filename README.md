@@ -1,5 +1,5 @@
 ## AngularJS UI Select
-This directive allows creating multiply drop-down lists with group related options. Value of selected options added to an array that available to AngularJS.
+This directive allows creating multiple drop-down lists with group related options. Value of selected options added to an array that available to AngularJS.
 
 ![Screenshot](ui-select.png?raw=true "Angular JS UI Select")
 

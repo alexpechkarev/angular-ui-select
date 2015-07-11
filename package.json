@@ -1,0 +1,23 @@
+{
+  "name": "angular-ui-select",
+  "version": "0.1.0",
+  "description": "AngularJS UI Select directive allows creating multiply drop-down lists with group related options.",
+  "main": "ui-select.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexpechkarev/angular-ui-select.git"
+  },
+  "keywords": [
+    "angular",
+    "select"
+  ],
+  "author": "Alexander Pechkarev",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alexpechkarev/angular-ui-select/issues"
+  },
+  "homepage": "https://github.com/alexpechkarev/angular-ui-select#readme"
+}
